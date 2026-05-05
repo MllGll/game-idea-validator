@@ -4,6 +4,7 @@ import { initReactI18next } from "react-i18next";
 const resources = {
 	en: {
 		translation: {
+			short_title: "Game Idea Validator",
 			title: "Game Idea Validator for Market Potential",
 			developedBy: "Game Idea Validator for Market Potential | Developed by",
 			home: {
@@ -106,6 +107,7 @@ const resources = {
 	},
 	pt: {
 		translation: {
+			short_title: "Validador de Ideias",
 			title: "Validador de Ideias de Jogos Lucrativos",
 			developedBy: "Validador de Ideias de Jogos Lucrativos | Desenvolvido por",
 			home: {

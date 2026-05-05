@@ -2,12 +2,16 @@ import "./App.css";
 import { Link, NextUIProvider } from "@nextui-org/react";
 import { useTranslation } from "react-i18next";
 import Home from "./pages/Home";
+import { Helmet } from "react-helmet";
 
 function App() {
 	const { t, i18n } = useTranslation();
 
 	return (
 		<NextUIProvider className="dark text-foreground bg-background">
+			<Helmet>
+				<title>{t('short_title')}</title>
+			</Helmet>
 			<div className="flex flex-col min-h-screen">
 				<Home />
 				<footer className="w-full text-center py-4 bg-content1 text-default-400 max-md:text-sm">
