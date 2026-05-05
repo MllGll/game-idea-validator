@@ -1,11 +1,14 @@
 import { Chip } from "@nextui-org/react";
+import { useTranslation } from "react-i18next";
 
 function Result({ name, result, feedback }) {
+	const { t } = useTranslation();
+
 	return (
 		<div className="h-full flex flex-col text-center">
 			<div className="h-full flex flex-col justify-center">
 				<span className="text-3xl font-normal">
-					O produto "{name}" atingiu um total de {result} pontos de 20 possíveis
+					{t("result.summary", { name, result })}
 				</span>
 				<div className="mt-2">
 					<Chip
@@ -14,16 +17,11 @@ function Result({ name, result, feedback }) {
 						variant="bordered"
 						size="lg"
 					>
-						{feedback?.message}
+						{feedback?.messageKey ? t(feedback.messageKey) : null}
 					</Chip>
 				</div>
 			</div>
-			<p className="text-default-400">
-				ⓘ Não leve o resultado como garantia de fracasso ou sucesso do seu
-				projeto. As regras do formulário foram definidas com base no que
-				enxergamos como mais relevante no mercado, você pode conferir os
-				detalhes clicando em "Entenda como é feito o cálculo".
-			</p>
+			<p className="text-default-400">{t("result.disclaimer")}</p>
 		</div>
 	);
 }

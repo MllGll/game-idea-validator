@@ -8,8 +8,10 @@ import {
 	NextUIProvider,
 } from "@nextui-org/react";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export const StartModal = ({ isOpen, onOpenChange, name, setName }) => {
+	const { t } = useTranslation();
 	const [value, setValue] = useState("");
 
 	useEffect(() => {
@@ -28,7 +30,7 @@ export const StartModal = ({ isOpen, onOpenChange, name, setName }) => {
 					{(onClose) => (
 						<>
 							<ModalHeader className="flex flex-col gap-1">
-								Nomeie o seu projeto
+								{t("startModal.title")}
 							</ModalHeader>
 							<ModalBody className="flex flex-row mb-2">
 								<Input
@@ -53,7 +55,7 @@ export const StartModal = ({ isOpen, onOpenChange, name, setName }) => {
 										setName(value);
 									}}
 								>
-									Continuar
+									{t("startModal.continue")}
 								</Button>
 							</ModalBody>
 						</>

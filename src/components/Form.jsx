@@ -1,5 +1,6 @@
 import { Button, Card, RadioGroup } from "@nextui-org/react";
 import { Fragment, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { steps } from "../assets/utils";
 import Result from "./Result";
 import { CustomRadio } from "./ui/Radio";
@@ -15,6 +16,7 @@ function Form({
 	result,
 	setResult,
 }) {
+	const { t } = useTranslation();
 	const maxSteps = visibleSteps.length;
 	const firstStep = activeStep === 0;
 	const lastStep = activeStep + 1 === maxSteps;
@@ -38,18 +40,18 @@ function Form({
 		const percentage = (totalPoints / 20) * 100;
 		const getFeedback = () => {
 			if (percentage >= 80) {
-				return { message: "Alto potencial de lucro", color: "success" };
+				return { messageKey: "form.feedback.high", color: "success" };
 			}
 			if (percentage >= 60) {
-				return { message: "Bom potencial de lucro", color: "primary" };
+				return { messageKey: "form.feedback.good", color: "primary" };
 			}
 			if (percentage >= 40) {
-				return { message: "Potencial moderado", color: "secondary" };
+				return { messageKey: "form.feedback.moderate", color: "secondary" };
 			}
 			if (percentage >= 20) {
-				return { message: "Baixo potencial de lucro", color: "warning" };
+				return { messageKey: "form.feedback.low", color: "warning" };
 			}
-			return { message: "Potencial muito baixo", color: "danger" };
+			return { messageKey: "form.feedback.veryLow", color: "danger" };
 		};
 		setFeedback(getFeedback());
 	};
@@ -74,6 +76,9 @@ function Form({
 		setVisibleSteps(nextVisibleSteps);
 	};
 
+	const currentStep = visibleSteps[activeStep];
+	const stepId = currentStep.id;
+
 	return (
 		<Card className="form-card p-6 mt-16 mb-24 w-[1100px] max-xl:w-[80vw] max-sm:w-[95vw] h-[375px] justify-between">
 			{result !== null ? (
@@ -82,20 +87,20 @@ function Form({
 				<Fragment>
 					<div className="flex flex-col gap-2">
 						<span className="text-3xl max-sm:text-xl font-bold">
-							{visibleSteps[activeStep].question}
+							{t(`form.steps.${stepId}.question`)}
 						</span>
 						<span className="text-lg max-xl:text-base max-sm:text-sm text-default-500">
-							{`Exemplo: ${visibleSteps[activeStep].example}`}
+							{t("form.examplePrefix")} {t(`form.steps.${stepId}.example`)}
 						</span>
 					</div>
 
 					<RadioGroup
-						value={answers[visibleSteps[activeStep].id] || ""}
+						value={answers[stepId] || ""}
 						onValueChange={handleAnswerChange}
 					>
 						<div className="flex gap-4">
-							<CustomRadio value="yes">Sim</CustomRadio>
-							<CustomRadio value="no">Não</CustomRadio>
+							<CustomRadio value="yes">{t("form.yes")}</CustomRadio>
+							<CustomRadio value="no">{t("form.no")}</CustomRadio>
 						</div>
 					</RadioGroup>
 
@@ -110,16 +115,16 @@ function Form({
 								size="lg"
 								variant="light"
 							>
-								Voltar
+								{t("form.back")}
 							</Button>
 							<Button
 								onPress={lastStep ? calculatePoints : handleNext}
-								isDisabled={!answers[visibleSteps[activeStep].id]}
+								isDisabled={!answers[stepId]}
 								size="lg"
 								variant={lastStep ? "solid" : "flat"}
 								color={lastStep ? "primary" : "default"}
 							>
-								{lastStep ? "Calcular" : "Próximo"}
+								{lastStep ? t("form.calculate") : t("form.next")}
 							</Button>
 						</div>
 					</div>
