@@ -4,5 +4,5 @@ import { defineConfig } from "vite";
 // https://vite.dev/config/
 export default defineConfig({
 	plugins: [react()],
-	base: "/validador-de-jogos-lucrativos",
+	base: "/game-idea-validator",
 });

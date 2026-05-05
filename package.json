@@ -1,6 +1,6 @@
 {
-	"name": "validador-de-jogos-lucrativos",
-	"homepage": "https://mllgll.github.io/validador-de-jogos-lucrativos/",
+	"name": "game-idea-validator",
+	"homepage": "https://mllgll.github.io/game-idea-validator/",
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",

@@ -3,11 +3,11 @@
 <div align="center">
 
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
-![Issues](https://img.shields.io/github/issues/MllGll/validador-de-jogos-lucrativos
+![Issues](https://img.shields.io/github/issues/MllGll/game-idea-validator
 )
-![Pull Requests](https://img.shields.io/github/issues-pr/MllGll/validador-de-jogos-lucrativos
+![Pull Requests](https://img.shields.io/github/issues-pr/MllGll/game-idea-validator
 )
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/MllGll/validador-de-jogos-lucrativos/blob/main/LICENSE)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/MllGll/game-idea-validator/blob/main/LICENSE)
 
 </div>
 
@@ -53,7 +53,7 @@ Essas instruções irão lhe fornecer uma cópia do projeto para que você possa
 
 Clone o projeto e abra no editor
 ```
-git clone https://github.com/MllGll/validador-de-jogos-lucrativos.git
+git clone https://github.com/MllGll/game-idea-validator.git
 ```
 
 Instale as dependências
@@ -76,7 +76,7 @@ Assim que o projeto for executado, abra a porta referenciada no terminal no nave
 
 ## ❓ Suporte <a name = "support"></a>
 
-Para suporte, envie um email para marcellogallante@gmail.com ou navegue pelas [issues](https://github.com/MllGll/validador-de-jogos-lucrativos/issues).
+Para suporte, envie um email para marcellogallante@gmail.com ou navegue pelas [issues](https://github.com/MllGll/game-idea-validator/issues).
 
 
 ## ✍️ Autores <a name = "authors"></a>
