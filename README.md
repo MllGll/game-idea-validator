@@ -1,84 +1,115 @@
-<h3 align="center">Validador de Ideias de Jogos Lucrativos</h3>
+<h1 align="center">Game Idea Validator for Market Potential</h1>
 
 <div align="center">
 
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
-![Issues](https://img.shields.io/github/issues/MllGll/game-idea-validator
-)
-![Pull Requests](https://img.shields.io/github/issues-pr/MllGll/game-idea-validator
-)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/MllGll/game-idea-validator/blob/main/LICENSE)
+![Issues](https://img.shields.io/github/issues/MllGll/game-idea-validator)
+![Pull Requests](https://img.shields.io/github/issues-pr/MllGll/game-idea-validator)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 
 </div>
 
-<p align="center">
+<div align="center">
 
-![Imagem demonstrativa](./public/demo-screen.png)
+![demo_screen](./public/demo-screen.png)
 
-</p>
+</div>
 
-## 📝 Apêndice
+## Table of Contents
 
-- [Sobre](#about)
-- [Regras de avaliação](#rules)
-- [Rodando localmente](#installation)
-- [Ferramentas utilizadas](#built_using)
-- [Suporte](#support)
-- [Autores](#authors)
+- [Description](#description)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Contributing](#contributing)
+- [Support](#support)
+- [Authors](#authors)
+- [License](#license)
 
-## 🧐 Sobre <a name = "about"></a>
+## Description
 
-Como entusiasta e estudante na área de desenvolvimento de jogos, identifiquei uma necessidade que afeta especialmente desenvolvedores e equipes independentes durante a etapa de planejamento e pesquisa de mercado.
+During planning and market research, independent developers and small teams often need a lightweight way to stress-test game ideas for commercial viability. **Game Idea Validator** targets that gap; it comes from interest in game development as both enthusiast practice and learning.
 
-Este projeto busca atender a essa demanda por meio de um formulário projetado para oferecer suporte na avaliação crítica de ideias ou conceitos de jogos, considerando uma perspectiva essencialmente lucrativa.
+The app is a browser-based questionnaire that supports critical evaluation of game concepts from a primarily profit-oriented angle. Questions cover distinct dimensions of the product; a structured scoring system (total out of 20, with qualitative bands) helps reason about market value and relative success potential. Criteria reflect factors such as popularity, relevance, and target-audience interest.
 
-O formulário é composto por perguntas que abordam diferentes aspectos do produto. Através de um sistema de pontuação estruturado, ele auxilia na análise do valor de mercado e do potencial de sucesso do jogo. Os critérios avaliados incluem fatores como popularidade, relevância e o interesse do público-alvo.
+The interface is available in English and Portuguese (default follows the browser language). Critiques and suggestions to improve the evaluation method are welcome—see [Support](#support).
 
-Por favor, sinta-se a vontade para compartilhar críticas, sugestões ou melhorias para aprimorar o método de avaliação.
+## Features
 
-## 🏁 Regras de avaliação <a name = "rules"></a>
+- Enter a project name and step through yes/no questions with optional examples for each item.
+- Move forward and backward through the flow; one follow-up question appears only when relevant answers are given.
+- Receive a numeric score (max 20), a labeled potential band, and a short disclaimer about interpreting results.
+- Open a panel that lists how each question contributes points.
+- Switch language from the footer without reloading.
+- Restart the flow to evaluate another idea.
 
-- O produto é conhecido internacionalmente? Caso sim, +5 pontos
-- O produto esteve em alta nos últimos anos em outras mídias? Caso sim, +3 pontos
-- O tema/gênero do produto esteve em alta nos últimos anos? (Últimos 5 anos) Caso sim, +2 pontos
-- Existe algum jogo recém-lançado focado no produto? Caso não, +3 pontos
-    - Alcançou um público grande ou obteve um feedback positivo? Caso não, +1 ponto
-- Existe uma demanda por um jogo do produto? Caso sim, +3 pontos
-- O público-alvo do produto em outras mídias é grande? Caso sim, +1 ponto
-- O público-alvo de um jogo do produto é grande? Caso sim, +3 pontos
+### Scoring rules
 
-## 💻 Rodando localmente <a name = "installation"></a>
+Each question focuses on different aspects of the product; this scoring system helps measure market value and success potential. Factors such as popularity, relevance, and audience interest were taken into account.
 
-Essas instruções irão lhe fornecer uma cópia do projeto para que você possa executá-lo em sua própria máquina para fins de desenvolvimento e testes.
+- **Is the product internationally known?** If yes, +5 points.
+- **Has the product been trending in recent years in other media?** If yes, +3 points.
+- **Has the product's theme or genre been trending in recent years?** If yes, +2 points.
+- **Is there a recently released game focused on the product? (Last 5 years)** If no, +3 points.
+  - **Did it reach a large audience or receive positive feedback?** (Only if the previous question was answered yes.) If no, +1 point.
+- **Is there demand for a game about the product?** If yes, +3 points.
+- **Is the product's target audience in other media large?** If yes, +1 point.
+- **Is the target audience for a game about the product large?** If yes, +3 points.
 
-Clone o projeto e abra no editor
-```
+## Tech Stack
+
+**Frontend**
+
+- React 18
+- Vite (SWC React plugin)
+- NextUI
+- Tailwind CSS
+- Framer Motion
+- i18next / react-i18next
+- Lucide React (icons)
+
+**Tooling / Infrastructure**
+
+- Biome (formatter and linter)
+- PostCSS and Autoprefixer
+- `gh-pages` for publishing the production build
+
+## Getting Started
+
+### Installation
+
+```bash
 git clone https://github.com/MllGll/game-idea-validator.git
-```
-
-Instale as dependências
-```
+cd game-idea-validator
 npm install
 ```
 
-Inicie o servidor
-```
+### Running the project
+
+```bash
 npm run dev
 ```
 
-Assim que o projeto for executado, abra a porta referenciada no terminal no navegador de sua preferência.
+Open the local URL printed in the terminal (Vite dev server).
 
-## ⛏️ Ferramentas utilizadas <a name = "built_using"></a>
+## Contributing
 
-- [React](https://react.dev/) - Biblioteca JavaScript
-- [Vite](https://vite.dev/) - Servidor de desenvolvimento
-- [NextUI](https://nextui.org/) - Biblioteca de UI para React
+1. Open an issue to describe the change or bug.
+2. Fork the repository and create a branch for your work.
+3. Submit a pull request referencing the issue when applicable.
 
-## ❓ Suporte <a name = "support"></a>
+## Support
 
-Para suporte, envie um email para marcellogallante@gmail.com ou navegue pelas [issues](https://github.com/MllGll/game-idea-validator/issues).
+Report problems and feature requests via [GitHub Issues](https://github.com/MllGll/game-idea-validator/issues) first.
 
+**Marcello Gallante** — [marcellogallante@gmail.com](mailto:marcellogallante@gmail.com)
 
-## ✍️ Autores <a name = "authors"></a>
+## Authors
 
-- [@MllGll](https://github.com/MllGll) - Criador
+**Marcello Gallante**
+
+- GitHub: [https://github.com/MllGll](https://github.com/MllGll)
+
+## License
+
+This project is licensed under the MIT License. See [LICENSE](./LICENSE).
